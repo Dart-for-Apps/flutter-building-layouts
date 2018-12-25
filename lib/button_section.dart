@@ -36,8 +36,8 @@ class ButtonSection extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: <Widget>[
         CustomButton(icon: Icons.call, label: 'CALL'),
-        CustomButton(icon: Icons.near_me, label: 'CALL'),
-        CustomButton(icon: Icons.share, label: 'CALL'),
+        CustomButton(icon: Icons.near_me, label: 'ROUTE'),
+        CustomButton(icon: Icons.share, label: 'SHARE'),
       ],
     );
   }
