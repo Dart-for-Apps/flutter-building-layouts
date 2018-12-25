@@ -24,15 +24,30 @@ class BuildingLayouts extends StatelessWidget {
       appBar: AppBar(
         title: Text('Building Lyaouts'),
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+      body: ListView(
+        // 향 후 앱 확장을 위해 리스트 방향을 가로로 수정
+        scrollDirection: Axis.horizontal,
         children: <Widget>[
-          TitleSection(),
-          SizedBox(
-            height: 9.0,
+          Container(
+            // horizontal 리스트의 경우 width 정보가 반드시 필요
+            // vertical 리스트의 경우는 height 정보가 반드시 필요
+            width: MediaQuery.of(context).size.width,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                ImageSection(),
+                SizedBox(
+                  height: 9.0,
+                ),
+                TitleSection(),
+                SizedBox(
+                  height: 9.0,
+                ),
+                ButtonSection(),
+                TextSection(),
+              ],
+            ),
           ),
-          ButtonSection(),
-          TextSection(),
         ],
       ),
     );
@@ -135,6 +150,19 @@ class TextSection extends StatelessWidget {
           ''',
         softWrap: true,
       ),
+    );
+  }
+}
+
+class ImageSection extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Image.asset(
+      'images/lake.jpg',
+      width: 600.0,
+      height: 240.0,
+      fit: BoxFit.cover,
     );
   }
 }
