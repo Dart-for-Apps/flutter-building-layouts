@@ -21,20 +21,22 @@ class BuildingLayouts extends StatelessWidget {
             // horizontal 리스트의 경우 width 정보가 반드시 필요
             // vertical 리스트의 경우는 height 정보가 반드시 필요
             width: MediaQuery.of(context).size.width,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                ImageSection(),
-                SizedBox(
-                  height: 9.0,
-                ),
-                TitleSection(),
-                SizedBox(
-                  height: 9.0,
-                ),
-                ButtonSection(),
-                TextSection(),
-              ],
+            child: ListView(
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  ImageSection(),
+                  SizedBox(
+                    height: 9.0,
+                  ),
+                  TitleSection(),
+                  SizedBox(
+                    height: 9.0,
+                  ),
+                  ButtonSection(),
+                  TextSection(),
+                ],
+              ),
             ),
           ),
         ],
